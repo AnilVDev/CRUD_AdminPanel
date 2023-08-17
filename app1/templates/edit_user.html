@@ -1,0 +1,33 @@
+{% extends "htmlbase.html" %}
+
+{% block title %} User Home Page {% endblock title %}
+
+{% block content %}
+
+
+<div class="center">
+        <form method="POST" action="{% url 'updateData' user.id %}">
+          {% csrf_token %}
+          <h2 class="heading p-2 mb-5 text-center">Edit user</h2>
+          <div class="mb-3">
+            <label for="name">Name</label>
+            <input type="text" class="form-control border-primary" id="name" value="{{ user.first_name }}" name="name"required>
+          </div>
+          <div class="mb-3">
+            <label for="username">Username</label>
+            <input type="username" class="form-control border-primary" id="username" value="{{ user.username }}" name="username" required>
+          </div>
+          <div class="mb-3">
+            <label for="email">Email</label>
+            <input type="email" class="form-control border-primary" id="email" value="{{ user.email }}" name="email"required>
+          </div>
+
+          <div class="button-column d-flex justify-content-center mt-5" >
+            <button type="submit" class="btn btn-primary ">Update</button>
+              <a class="btn btn-secondary " href="{% url 'adminHome' %} " >Cancel</a>
+          </div>
+        </form>
+      </div>
+
+
+{% endblock content %}

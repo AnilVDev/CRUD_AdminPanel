@@ -1,0 +1,37 @@
+{% extends "htmlbase.html" %}
+
+{% block title %} User Home Page {% endblock title %}
+
+{% block content %}
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold text-center" id="exampleModalCenterTitle">Log Out</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-body-text text-center">Are you sure want to Log out ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <a href="{% url 'logout' %}" type="button" class="btn btn-primary">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="d-flex flex-column vh-100 justify-content-center align-items-center">
+        <div class="text-center">
+        <h1 class="py-1">Welcome to user Home</h1>
+        </div>
+        <div class="text-center">
+            <a class="btn btn-primary text-white" id="logout" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Log out
+            </a>
+          </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+
+{% endblock %}

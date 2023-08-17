@@ -1,0 +1,33 @@
+{% extends "htmlbase.html" %}
+
+{% block title %} Login Page {% endblock title %}
+
+{% block content %}
+
+<div class="center2">
+      <form method="post">
+        {% csrf_token %}
+        <span  class="head">
+          <h2>User login</h2>
+        </span>
+
+        <div >
+          <label for="exampleInputEmail1" class="form-label">Username</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" name="username" aria-describedby="emailHelp" required>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password" id="exampleInputPassword1" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+        <div class="button-column">
+          <h6>If you are new user,<br></h6>
+          <a  href="{% url 'signup' %}" class="btn btn-secondary">Signup</a>
+
+          <a href="{% url 'adminLogin'%}" class="btn btn-primary">Admin Log-in</a>
+          <p style = "color: red">{{user404}}</p>
+        </div>
+      </form>
+    </div>
+
+{% endblock content %}

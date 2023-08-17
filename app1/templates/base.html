@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"/>
+    <link rel = "stylesheet" type = "text/css" href = "https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css"/>
+
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+
+
+        }
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(129deg, rgba(34, 193, 195, 1) 0%, rgba(253, 181, 45, 1) 100%);
+
+        }
+        main.table{
+            width: 82vw;
+            height: 90vh;
+            background-color: #fff5;
+            backdrop-filter: blur(7);
+            box-shadow: 0 0.4rem 0.8rem #0005;
+            border-radius: 0.8rem;
+        }
+        .table-header{
+            width: 100%;
+            height: 20%;
+            background-color: #fff4;
+            padding: 0.8rem 1rem;
+            border-radius: 0.6rem 0rem 0.6rem 0rem;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .table-body{
+            width: 95%;
+            max-height: 70%;
+            background-color: #fffb;
+            margin: 0.8rem auto;
+            border-radius: 0.6rem;
+            overflow: auto;
+        }
+        .search-bar{
+            width: 40%;
+
+        }
+        table{
+            width: 100%;
+        }
+        table, th, td {
+            padding: 1rem;
+            border-collapse: collapse;
+        }
+        thead th{
+            top: 0;
+            left: 0;
+            <!-- background-color: #d5d1defe; -->
+
+        }
+        tbody tr:hover{
+            background-color: azure;
+        }
+        .header-buttons{
+        background-color: None;
+        }
+    </style>
+</head>
+<body>
+    <div class="container card shadow-2-strong card-registration ">
+
+        <div class="row justify-content-center align-items-center h-100 card-body p-4 p-md-5"">
+            <h4>CRUD</h4>
+            {% block content %}
+            {% endblock %}
+        </div>
+
+    </div>
+</body>
+</html>
+
